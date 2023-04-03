@@ -2,7 +2,7 @@
 id: aqb1su0lbu9r3hwjn9camqj
 title: Chapter6
 desc: ''
-updated: 1680116249626
+updated: 1680123262485
 created: 1680100266167
 ---
 
@@ -53,7 +53,7 @@ This system compares peer groups of individuals grouped together based on equal 
 
 TEAMS II is a good example of a system created with the purpose of monitoring the police, but often times even when we have systems in place we need people to use than and act upon them.
 
-#### How we could be using Big data to Police the police
+#### How we could be using Big data to Police the Police
 * For example, Palantir can track the reasons of officer gives for entering a particular query. This is tracked in an immuttable adit log for any time an officer is being investigated for some type of malpractice.
 >Not one person [the athor] spoke with could identify a single instance in which a Palantir use audit had been conducted pg 103
   - This is because the LAPD doesn't want to use limited resourced performing audits. It's not a priority for them. 
@@ -71,12 +71,20 @@ We can use the simple heuristic of a 3 point system where officers check for sus
 - **<span style="color: red">Did not understand this</span>**
 
 ## Reinforcing Inequality through Big Data
+
+### Bias in Training Data
 Algorithms trained using Machine Learning techniques will use training data to find statistical relationships and patterns which can be packaged into a model which can use data points to generate an output.
 
 The police's predictive algorithms use all types of input data on certain landmarks and locations, geo-tagged crime activity, et cetera, to get an output of who and where are high risk for crime. 
 
 But if the training data is biased, the output when given new data will also be biases.
 
+#### Examples
+- Crime statistics (data) are incomplete. 
+>Official crime statistics are incomplete; estimates of unreported crime range from less than 17  percent to over 68 percent, depending on the offense. pg 109
+
 ### Feedback Loops
 LAPD's points system for prioritizing people to interacti with will give them a point when they are interacted with. So this feedback loop just makes initially suspicious people, more and more suspicious with no end in sight. It doesn't really help. 
 - People who are in the system can never get out. They will always be in police suspicion. 
+
+
