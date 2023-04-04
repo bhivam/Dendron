@@ -2,7 +2,7 @@
 id: 2gm3imgm3sf3x3f2vo0ew9v
 title: Network Communication
 desc: ''
-updated: 1680471661684
+updated: 1680564341744
 created: 1680377631394
 ---
 
@@ -99,7 +99,7 @@ But typicially its better to use a function called `getaddrinfo` to acquire the 
 int getaddrinfo(const char *node, const char *service, const struct addrinfo *hints, struct addrinfo **res);
 ```
 **node**
-This is the domain name.
+This is the domain name. If you pass NULL to this it will assume the local host.
 **service**
 This is the port.
 **hints**
@@ -137,9 +137,44 @@ int listen(int socket, int queue_size)
 `listen()` takes the socket, now associated with a porth through bind and it sets up the ability to listen for new connections. queue_size is how many clients that will be allows to be in the queue for being accepted. If the queue is full and a client trys to connect, they will be denied and they will see an error.
 
 ```c
-int accept(int socket, struct sockaddr *remoteaddr, socklen_t remoteaddrlen)
+int accept(int socket, struct sockaddr *remoteaddr, socklen_t *remoteaddrlen)
 ```
 This is where we actually block and wait for new connections to come. This returned a file descriptor which is the socket associated with the particular connection `accept()` got. 
 
 #### remoteaddr
-This is where information about the remote host is stored. We can put a specific type of sockaddr struct in here if we know what type of connection we are going to recieve, or we can use struct sockaddr_storage which is as large as the largest sockaddr struct.  
+This is where information about the remote host is stored. We can put a specific type of sockaddr struct in here if we know what type of connection we are going to recieve, or we can use struct sockaddr_storage which is as large as the largest sockaddr struct. You must cast the sockaddr_storage to a sockaddr
+
+#### remoteaddrlen 
+At first you will give a pointer to the remoteaddr you have passed, and it will be populated with the size of the remote address which is accepted.
+
+## Inter Device Communication
+
+### First Telephones
+First phones were just two microphones and speakers connected by a wire. 
+
+But we need way more direct connections the more people we add. So if a 100 people needed a direct conection to a 99 other people, then we would have 9900 wires among these people, in total. 
+
+To get around this there was a central office where everyone's phone is connected to. They would connect you to any other person whom you would need to talk to. So now you just need one connection that goes to a central point and at that central point two people are connected. (circuit switching)
+
+##### Problems:
+- People are guaranteed a certain amount of bandwith for some amount of money because there is a maximum amount of bits that can be sent on the network. 
+- Often there is a maximum number of people that can connect to a network at this point. 
+
+Unlike phones computers are bursty. They send a lot of data at once and not a small amount counstatnly over time like a phone call. So this idea of a fixed amount of through put doesn't make sense for computer networks. 
+
+##### Now we have packet switching:
+- Data is broken down into fixed dize chunks. 
+- each packet says where it is going
+- networks will forward packets to their destination as bandwith becomes available. 
+
+It's on the recipient to assemble this into the correct order.
+
+### TCP
+This is the internet streaming socket protocl is called TCP (Transmission control protocol)
+
+In TCP the IP address of both processes are needed. This allows us to have multiple simulataneous connections between two machines
+
+Modern web browsing wouldn't be possible without this. When we download web pages, HTTP will use multiple connections to download all the parts of the webpage. THe way that the connections are told apart is by the client port number. 
+
+So connect() does bind the socket to a port but not to a specific one, its random. But we need each connection to have a specific port to distinguish connections
+

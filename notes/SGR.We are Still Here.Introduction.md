@@ -2,7 +2,7 @@
 id: 33lc99e3o0dfhjgtd48f3ii
 title: Introduction
 desc: ''
-updated: 1680552764407
+updated: 1680555187151
 created: 1680539863592
 ---
 > American nonvoters are disproportionately younger, poorer, less educated,and more racially and ethnically diverse. People with lower levels of income and education are also less likely to contact a public official, join a civic and political organization, or donate to a political campaign. Moreover, instead of fostering solidarity, living through the Great Recession of 2008 actually deepened divisions among those fighting to survive, turning some white workers against racial minorities, immigrants, and the poor. pg 1-2

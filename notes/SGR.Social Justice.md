@@ -2,16 +2,21 @@
 id: mrgt3q9zqrcghymweh7duxc
 title: Social Justice
 desc: ''
-updated: 1680121572793
+updated: 1680553731280
 created: 1680120681567
 ---
-### Equality
-- It is important to think about what needs to be equal. Equality is not inherently important. 
+## Elizabeth Anderson
 
-### David Smidtz
+#### Core Beliefs:
+> People are entitled to whatever capabilities are necessary to enable them to avoid or escape entanglement in oppressive social relationships.
 
-#### Justice as a Neighborhood
-- Different places in a neighborhood have different contexts where justice is applied differently.
-- Depending on the context different elements of justice can be drawn upon. 
-- If we apply the same element of justice no matter what the situation, we will run into situations which we feel are unjust
+I think this it is very important to be clear about what we mean by oppresive social relationships. I feel like this is a very subjective thing so there needs to be a careful definition before this can be applied. 
+
+> They are entitled to the capabilities necessary for functioning as an equal citizen in a democratic state
+
+In public interactions you should expect to be treated as anyone else would be. Foe example in a city hall type of situation, everyone's thought sshould have equal weight. 
+
+Either society shouldn't care about certain differences between citizens or they should provide an easy way for citizens to acquire the qualities to get equal treatment. 
+
+#### Read more about the conversation on the limitations of these things.
 
