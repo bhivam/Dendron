@@ -2,7 +2,7 @@
 id: 2gm3imgm3sf3x3f2vo0ew9v
 title: Network Communication
 desc: ''
-updated: 1680564341744
+updated: 1682718536915
 created: 1680377631394
 ---
 
@@ -178,3 +178,53 @@ Modern web browsing wouldn't be possible without this. When we download web page
 
 So connect() does bind the socket to a port but not to a specific one, its random. But we need each connection to have a specific port to distinguish connections
 
+## Layering
+
+Writing network code is very hard if you're doing everything at once. This is why we have a layered systems. Application progammers write code at the top of this systems. We use the many facilities provided to us by the OS and network. 
+
+## OSI Model
+
+This is a theoretical model of network communction. It breaks them down into 7 layers. These generally don't correspond to real life networks. 
+
+### Layers
+#### 1. Application
+We are asking what messages we need to communicate, what is the expected response to a given message. 
+- Examples:
+  - Tic Tac Toe Game Protocol
+  - HTTP (WEB): GET, POST, etc
+  - SMTP (EMAIL)
+
+#### 2. Presentation
+Given some messages, how do we encode these messages in a way that we can transfer them across the network. We specify this in TTT by using four capital letters at the beggining, using '|'. This used text encoding. Some can use just bits themselves.
+
+#### 3. Session
+When do we begin and end connections to remote hosts? This is what specifies how computers will connect to eachother. Who is reponsible for creating connections, how many connections do we have. 
+
+#### 4. Tansport Layer
+This is code we do not write. This is asking how we can maintain a connection, what type of connection. How do we deal with ordering, dropped packets, etc. This part of the process is handled by the OS. 
+
+#### 5. Network
+How does information actually arrive from my computer to another? What if that computer is not in my immediate network. How are packets routed from one place to another. This is different from the transport layer because the transport layer is assuming that it can get data from one place to another, it is simply asking how it will create a "connection" and defines what it means ot have a connection. This layer is handled by the network and the series of routers between our computer and the host we are connecting to. 
+
+#### 6. Data Link
+How does data get from one computer to the immediate next computer in the network. These are things like ethernet or WIFI.
+
+#### 7. Physical
+This is how we actually get an ethernet connection. Radio Waves, wire, optical lasers, etc. 
+
+ #### Internet Model Layers
+ ##### 1. Application - (application + presentation)
+ ##### 2. Transport - (Session + Tansport)
+ ##### 3. Internet - (Network)
+ ##### 4. Physical - (Data Link + Physical)
+
+
+#### Why do we care about abstraction?
+- Less to worry about
+  - application developers don't need to worry about lower layers
+  - network engineers don't need to worry about application
+- flexibility
+  - easy to create new applications for TCP/IP or UDP/IP
+  - easy to create new networks that support IP
+
+  
